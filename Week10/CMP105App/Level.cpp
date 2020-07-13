@@ -8,7 +8,8 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	// initialise game objects
 	PlayerObject.texture.loadFromFile("gfx/MushroomTrans.png");
 	PlayerObject.setTexture(&PlayerObject.texture);
-	PlayerObject.setSize(sf::Vector2f(50, 50));
+	PlayerObject.setSize(sf::Vector2f(32, 32));
+	PlayerObject.setCollisionBox(0, 0, 32, 32);
 	PlayerObject.setPosition(500, 100);
 	PlayerObject.setInput(input);
 

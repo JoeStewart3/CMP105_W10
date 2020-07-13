@@ -67,7 +67,7 @@ void Player::update(float dt) {
 }
 
 void Player::collisionResponse(GameObject* collider) {
-
+	
 	//Coordinates of the centre of the collider and of the player
 	sf::Vector2f colliderCentre = (collider->getPosition() + (collider->getSize() * 0.5f));
 	sf::Vector2f playerCentre = (getPosition() + (getSize() * 0.5f));
@@ -102,6 +102,7 @@ void Player::collisionResponse(GameObject* collider) {
 			std::cout << "TOP" << std::endl;
 			velocity.y = 0;
 			setPosition(getPosition().x, collider->getPosition().y - getSize().y);
+			isJumping = false;
 		}
 		//bottom side collision
 		if (colliderCentre.y < playerCentre.y) {
